@@ -10,22 +10,6 @@ Desenvolver um sistema simples, confiável e de alta frequência de aquisição 
 
 ---
 
-## ⚙️ Estrutura do Projeto
-
-```
-📁 Projeto/
-👉📁 scripts/
-    👉 aquisicao_serial.py         # Recebe dados via serial e salva em .csv
-    👉 analise_fft_filtro.py       # FFT, autocorrelação, filtro e gráficos
-    👉 analise_jitter.py           # Geração de gráficos de jitter e tempo
-👉📁 dados/
-    👉 leitura_teste_10khz.csv     # Dados brutos da ESP32
-    👉 leitura_teste_completa.txtx # Backup / análise paralela
-👉 README.md
-👉 esp32_serial_10khz.ino          # Código Arduino/C++ para ESP32
-```
-
----
 
 ## 📡 Funcionamento da Comunicação Serial
 
