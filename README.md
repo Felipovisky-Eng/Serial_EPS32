@@ -31,39 +31,7 @@ Taxa de baudrate: **1.500.000** (1.5 Mbaud)
 
 Com margem e estabilidade: **10.000 amostras/s (10 kHz)**
 
----
 
-## ✅ Código C++ para ESP32 (Última versão testada com sucesso)
-
-```cpp
-void setup() {
-  Serial.begin(1500000);
-  delay(100);
-  analogReadResolution(10);
-
-  // Aquecimento do ADC
-  for (int i = 0; i < 10000; i++) {
-    analogRead(34);
-    delayMicroseconds(50);
-  }
-
-  delay(1000);
-}
-
-void loop() {
-  for (int i = 0; i < 52100; i++) {
-    uint32_t tempo = micros();
-    uint16_t leitura = analogRead(34);
-    Serial.write((uint8_t*)&tempo, 4);
-    Serial.write((uint8_t*)&leitura, 2);
-    delayMicroseconds(20);  // Mantém taxa de ~10 kHz
-  }
-
-  while (true); // Fim da aquisição
-}
-```
-
----
 
 ## 🐍 Scripts em Python
 
@@ -98,13 +66,7 @@ void loop() {
 Frequência de amostragem: 9999.2 Hz
 ```
 
-### Gráficos:
 
-- **tempo\_amostras.svg**: tempo acumulado (esperado: rampa contínua)
-- **jitter.svg**: flutuação no intervalo de tempo entre amostras
-- **fft.svg**: espectro de frequência do sinal capturado
-
----
 
 ## 📀 Arquivos incluídos
 
@@ -123,8 +85,3 @@ Frequência de amostragem: 9999.2 Hz
 - Geração de relatório automático com LaTeX (Overleaf)
 
 ---
-
-## 📜 Licença
-
-Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
